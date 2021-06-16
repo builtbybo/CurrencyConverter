@@ -1,10 +1,11 @@
 
 import React from 'react'
-import { View, StyleSheet, StatusBar, Image, Dimensions, Text} from 'react-native'
+import { View, StyleSheet, StatusBar, Image, Dimensions, Text, Alert} from 'react-native'
 import {format} from 'date-fns'
 import colors from '../constants/colors';
 
 import { ConversionInput } from '../components/ConversionInput'
+import {Button} from '../components/Button'
 
 const screen = Dimensions.get('window');
 
@@ -88,6 +89,11 @@ export default () => {
      <Text style={styles.text}>
        {`1 ${baseCurrency} = ${conversionRate} ${quoteCurrency} as of ${format(new Date(date),'MMM do yyyy')}`}
      </Text>
+     <Button 
+       text="Reverse Currencies"
+       onPress={()=> Alert.alert('todo')}
+
+     />
    </View>
 );
 }
